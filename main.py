@@ -4,6 +4,7 @@ from selenium import webdriver
 class InstaBot:
     def __init__(self, username, password):
         self.username = username
+        #add the webdriver to your path so you dont have to add the direction of the chromedriver
         self.driver = webdriver.Chrome("C:/Users/manus/PYTHON/chromedriver")
         self.driver.get('http://www.instagram.com/')
         sleep(2)
@@ -16,7 +17,7 @@ class InstaBot:
         self.driver.find_element_by_xpath("//button[contains(text(), 'Ahora no')]").click()
         sleep(2)
         
-
+    #Function that searchs the user name of the varible buscador.
     def buscar_usuarios(self):
         buscador = "mariogil_27"
         self.driver.find_element_by_xpath("//input[@type=\"text\"]").send_keys(buscador)
